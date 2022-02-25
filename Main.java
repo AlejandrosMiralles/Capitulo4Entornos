@@ -1,8 +1,14 @@
 package com.company;
 import java.util.Scanner;
 
+/**
+ * Clase que calcula todos los números primos hasta un número proporcionado por el usuario siguiendo la metodología de Erastótenes
+ */
 public class Main {
     
+    /**
+     * Método principal. Es la encargada de mostrar los números primos
+     */
     public static void main(String[] args) {
         Scanner teclado=new Scanner(System.in);
         System.out.println("Introduce el número para la criba de Erastótenes:");
@@ -24,7 +30,11 @@ public class Main {
         teclado.close();
     }
 
-    
+    /**
+     * Genera todos los números primos hasta cierto número
+     * @param max Límite del método. No calculará números primos superiores a este
+     * @return Un array con todos los números primos calculados en orden.
+     */
     public static int[] generarPrimos (int max)
     {
         if (max < 2) {// max < 2
@@ -44,7 +54,12 @@ public class Main {
             
     }
 
-
+    /**
+     * Método que almacena en un array los números primos de un array "erastoteniense" (solo son true las posiciones primas)
+     * @param esPrimo Array booleana. Las celdas primas alamacenarán "trues"; el resto "falses" 
+     * @param cuentaPrimos La cantidad de primos(trues) en el array "erastoteniense" dado
+     * @return Un array con todos los números primos marcadas en el array proporcionado
+     */
     private static int[] SacarPrimosErastotenienses(boolean[] esPrimo, int cuentaPrimos) {
         int i;
         int j;
@@ -57,7 +72,11 @@ public class Main {
         return primos;
     }
 
-    
+    /**
+     * Método que dado un array de booleanos (todos en true), modifica ese array para que sólo sean true las posiciones de números primos.
+     * @param esPrimo Array a modificar. Todas sus celdas deben ser true
+     * @return Devuelve el número de primos en el array
+     */
     private static int TablaDeErastotenes(boolean[] esPrimo) {
         int i;
         int j;
